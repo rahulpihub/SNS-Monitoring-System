@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Monitoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Monitoring System</h1>
+        
+        <div class="video-container">
+            <img id="attendanceFeed" src="{{ url_for('video_feed_attendance') }}" alt="Attendance Stream">
+        </div>
+        
+        <div class="button-container">
+            <a href="{{ url_for('index') }}" class="button">Back to Work Hours Monitoring</a>
+            <button onclick="startAttendance()">Start Attendance</button>
+        </div>
+
+        <div id="attendanceMessage" class="message"></div>
+    </div>
+</body>
+<script src="{{ url_for('static', filename='attendance.js') }}"></script>
+</html>

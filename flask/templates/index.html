@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihub Monitoring System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Ihub Monitoring System</h1>
+        
+        <div class="video-container">
+            <img id="videoFeed" src="" alt="Video Stream" style="display: none;">
+        </div>
+        
+        <div class="button-container">
+            <a href="{{ url_for('attendance') }}" class="button">Attendance Monitoring</a>
+            <button id="toggleButton" onclick="toggleMonitoring()">Start Work Hours Monitoring</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <!-- Define video feed URL for JavaScript -->
+    <script>
+        const videoFeedUrl = "{{ url_for('video_feed') }}";
+    </script>
+    <script src="{{ url_for('static', filename='video_feed.js') }}"></script>
+</body>
+</html>
